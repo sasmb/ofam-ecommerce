@@ -58,6 +58,17 @@
     @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
   }
 
+  /* OFAM Agro Enterprise Components */
+
+  /* Brand Cards */
+  .brand-card {
+    @apply bg-brand-cream border border-brand-olive/20 rounded-xl shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  .brand-card-dark {
+    @apply bg-brand-olive text-brand-cream rounded-xl shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
   .text-xsmall-regular {
     @apply text-[10px] leading-4 font-normal;
   }

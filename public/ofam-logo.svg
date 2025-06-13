@@ -1,0 +1,35 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer orange circle border -->
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#F38D27" stroke-width="4"/>
+  
+  <!-- Inner olive green circle -->
+  <circle cx="40" cy="40" r="32" fill="#677D3F"/>
+  
+  <!-- Palm leaf icon -->
+  <g transform="translate(40, 40)">
+    <!-- Main leaf stem -->
+    <path d="M0,15 L0,-15" stroke="white" stroke-width="2" fill="none"/>
+    
+    <!-- Left side leaflets -->
+    <path d="M0,-15 Q-8,-12 -12,-8 Q-10,-6 -6,-8 Q-3,-10 0,-12" fill="white"/>
+    <path d="M0,-10 Q-7,-8 -10,-5 Q-8,-3 -5,-5 Q-2,-7 0,-8" fill="white"/>
+    <path d="M0,-5 Q-6,-4 -8,-2 Q-6,0 -4,-2 Q-2,-3 0,-4" fill="white"/>
+    <path d="M0,0 Q-5,-1 -6,1 Q-4,2 -3,0 Q-1,0 0,0" fill="white"/>
+    <path d="M0,5 Q-4,4 -5,6 Q-3,7 -2,5 Q-1,4 0,4" fill="white"/>
+    <path d="M0,10 Q-3,9 -4,11 Q-2,12 -1,10 Q0,9 0,9" fill="white"/>
+    
+    <!-- Right side leaflets -->
+    <path d="M0,-15 Q8,-12 12,-8 Q10,-6 6,-8 Q3,-10 0,-12" fill="white"/>
+    <path d="M0,-10 Q7,-8 10,-5 Q8,-3 5,-5 Q2,-7 0,-8" fill="white"/>
+    <path d="M0,-5 Q6,-4 8,-2 Q6,0 4,-2 Q2,-3 0,-4" fill="white"/>
+    <path d="M0,0 Q5,-1 6,1 Q4,2 3,0 Q1,0 0,0" fill="white"/>
+    <path d="M0,5 Q4,4 5,6 Q3,7 2,5 Q1,4 0,4" fill="white"/>
+    <path d="M0,10 Q3,9 4,11 Q2,12 1,10 Q0,9 0,9" fill="white"/>
+  </g>
+  
+  <!-- OFAM text -->
+  <text x="95" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#F38D27">OFAM</text>
+  
+  <!-- AGRO text -->
+  <text x="95" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#677D3F" letter-spacing="1px">AGRO</text>
+</svg> 

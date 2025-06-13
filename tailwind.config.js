@@ -21,6 +21,37 @@ module.exports = {
         padding: "padding-top padding-right padding-bottom padding-left",
       },
       colors: {
+        // OFAM Agro Enterprise Brand Colors
+        brand: {
+          olive: "#677D3F",      // Primary dark green
+          orange: "#F38D27",     // Secondary orange
+          dark: "#1A1A1A",       // Dark gray/black
+          cream: "#FFFAFA",      // Off-white/cream
+        },
+        primary: {
+          50: "#f0f7e8",
+          100: "#ddebc7",
+          200: "#c6dfa3",
+          300: "#add27b",
+          400: "#9bc85d",
+          500: "#677D3F",       // Main brand olive
+          600: "#5a6f37",
+          700: "#4a5c2d",
+          800: "#3b4924",
+          900: "#2d361a",
+        },
+        secondary: {
+          50: "#fef7ed",
+          100: "#fdead2",
+          200: "#fbd4a4",
+          300: "#f9b76b",
+          400: "#F38D27",       // Main brand orange
+          500: "#ed7014",
+          600: "#de5209",
+          700: "#b8390b",
+          800: "#952f10",
+          900: "#7a2710",
+        },
         grey: {
           0: "#FFFFFF",
           5: "#F9FAFB",

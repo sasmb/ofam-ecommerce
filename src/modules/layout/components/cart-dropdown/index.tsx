@@ -8,7 +8,7 @@ import {
 } from "@headlessui/react"
 import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import { Button } from "@/components/ui/button"
 import DeleteButton from "@modules/common/components/delete-button"
 import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
@@ -82,7 +82,7 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <PopoverButton className="h-full">
           <LocalizedClientLink
-            className="hover:text-ui-fg-base"
+            className="text-brand-olive hover:text-brand-orange transition-colors duration-200 font-medium"
             href="/cart"
             data-testid="nav-cart-link"
           >{`Cart (${totalItems})`}</LocalizedClientLink>
@@ -99,11 +99,11 @@ const CartDropdown = ({
         >
           <PopoverPanel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-brand-cream border-x border-b border-brand-olive/20 w-[420px] text-brand-olive shadow-lg"
             data-testid="nav-cart-dropdown"
           >
-            <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Cart</h3>
+            <div className="p-4 flex items-center justify-center bg-brand-olive/5 border-b border-brand-olive/10">
+              <h3 className="text-large-semi text-brand-olive font-bold">Cart</h3>
             </div>
             {cartState && cartState.items?.length ? (
               <>
@@ -194,7 +194,7 @@ const CartDropdown = ({
                   <LocalizedClientLink href="/cart" passHref>
                     <Button
                       className="w-full"
-                      size="large"
+                      size="lg"
                       data-testid="go-to-cart-button"
                     >
                       Go to cart
@@ -213,7 +213,7 @@ const CartDropdown = ({
                     <LocalizedClientLink href="/store">
                       <>
                         <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <Button variant="outline" onClick={close}>Explore products</Button>
                       </>
                     </LocalizedClientLink>
                   </div>
