@@ -17,38 +17,13 @@ type Props = {
 
 export const PRODUCT_LIMIT = 12
 
-export async function generateStaticParams() {
-  const { collections } = await listCollections({
-    fields: "*products",
-  })
+// Disable static generation to prevent build-time backend calls
+export const dynamic = 'force-dynamic'
 
-  if (!collections) {
-    return []
-  }
-
-  const countryCodes = await listRegions().then(
-    (regions: StoreRegion[]) =>
-      regions
-        ?.map((r) => r.countries?.map((c) => c.iso_2))
-        .flat()
-        .filter(Boolean) as string[]
-  )
-
-  const collectionHandles = collections.map(
-    (collection: StoreCollection) => collection.handle
-  )
-
-  const staticParams = countryCodes
-    ?.map((countryCode: string) =>
-      collectionHandles.map((handle: string | undefined) => ({
-        countryCode,
-        handle,
-      }))
-    )
-    .flat()
-
-  return staticParams
-}
+// export async function generateStaticParams() {
+//   // Disabled for deployment - requires backend connection
+//   return []
+// }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params
