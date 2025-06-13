@@ -1,0 +1,14 @@
+{
+  "env": {
+    "MEDUSA_BACKEND_URL": "https://placeholder-backend.com",
+    "NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY": "pk_placeholder",
+    "NEXT_PUBLIC_BASE_URL": "https://ofam-i2wpu8ovx-sasmbs-projects.vercel.app",
+    "NEXT_PUBLIC_DEFAULT_REGION": "us",
+    "REVALIDATE_SECRET": "placeholder-secret"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+} 
