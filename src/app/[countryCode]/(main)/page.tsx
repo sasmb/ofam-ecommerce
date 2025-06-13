@@ -20,14 +20,21 @@ export default async function Home(props: {
 
   const { countryCode } = params
 
-  const region = await getRegion(countryCode)
+  // Handle backend connection gracefully for deployment
+  let region: any = null;
+  let collections: any[] = [];
 
-  const { collections } = await listCollections({
-    fields: "id, handle, title",
-  })
-
-  if (!collections || !region) {
-    return null
+  try {
+    region = await getRegion(countryCode)
+    const collectionsResult = await listCollections({
+      fields: "id, handle, title",
+    })
+    collections = collectionsResult?.collections || []
+  } catch (error) {
+    console.log("Backend connection failed during build, using fallback:", error)
+    // Skip product section during build if backend unavailable
+    region = null
+    collections = []
   }
 
   return (
@@ -35,11 +42,17 @@ export default async function Home(props: {
       <Hero />
       <AboutSection />
       <Testimonials />
-      <div className="py-12">
-        <ul className="flex flex-col gap-x-6">
-          <FeaturedProducts collections={collections} region={region} />
-        </ul>
-      </div>
+      {collections && region ? (
+        <div className="py-12">
+          <ul className="flex flex-col gap-x-6">
+            <FeaturedProducts collections={collections} region={region} />
+          </ul>
+        </div>
+      ) : (
+        <div className="py-12 text-center text-brand-olive">
+          <p>Products coming soon...</p>
+        </div>
+      )}
     </>
   )
 }
