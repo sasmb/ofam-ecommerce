@@ -1,11 +1,11 @@
 import { Metadata } from "next"
 
-import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
 import AboutSection from "@modules/home/components/about-section"
 import { Testimonials } from "@/components/ui/testimonials"
-import { listCollections } from "@lib/data/collections"
-import { getRegion } from "@lib/data/regions"
+// import FeaturedProducts from "@modules/home/components/featured-products"
+// import { listCollections } from "@lib/data/collections"
+// import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
   title: "OFAM Agro Enterprise - Premium Palm Oil from Nigeria",
@@ -20,39 +20,20 @@ export default async function Home(props: {
 
   const { countryCode } = params
 
-  // Handle backend connection gracefully for deployment
-  let region: any = null;
-  let collections: any[] = [];
-
-  try {
-    region = await getRegion(countryCode)
-    const collectionsResult = await listCollections({
-      fields: "id, handle, title",
-    })
-    collections = collectionsResult?.collections || []
-  } catch (error) {
-    console.log("Backend connection failed during build, using fallback:", error)
-    // Skip product section during build if backend unavailable
-    region = null
-    collections = []
-  }
-
   return (
     <>
       <Hero />
       <AboutSection />
       <Testimonials />
-      {collections && region ? (
-        <div className="py-12">
-          <ul className="flex flex-col gap-x-6">
-            <FeaturedProducts collections={collections} region={region} />
-          </ul>
+      <div className="py-12 text-center text-brand-olive">
+        <div className="content-container">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Products Coming Soon</h2>
+          <p className="text-lg text-brand-olive/80">
+            Our premium palm oil products will be available for pre-order soon. 
+            Join the waitlist to be notified when we launch!
+          </p>
         </div>
-      ) : (
-        <div className="py-12 text-center text-brand-olive">
-          <p>Products coming soon...</p>
-        </div>
-      )}
+      </div>
     </>
   )
 }
