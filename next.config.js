@@ -1,7 +1,3 @@
-const checkEnvVariables = require("./check-env-variables")
-
-checkEnvVariables()
-
 /**
  * @type {import('next').NextConfig}
  */
@@ -35,6 +31,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "medusa-server-testing.s3.us-east-1.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
       },
     ],
   },
