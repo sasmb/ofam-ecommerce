@@ -1,125 +1,174 @@
 <p align="center">
-  <a href="https://www.medusajs.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    </picture>
-  </a>
+  <img alt="OFAM Agro Enterprise" src="./public/ofam-logo.svg" width="300">
 </p>
 
 <h1 align="center">
-  Medusa Next.js Starter Template
+  OFAM Agro Enterprise
 </h1>
 
 <p align="center">
-Combine Medusa's modules for your commerce backend with the newest Next.js 15 features for a performant storefront.</p>
+Premium palm oil ecommerce platform - Pioneering sustainable palm oil production in Nigeria
+</p>
 
 <p align="center">
-  <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
-  </a>
-  <a href="https://discord.gg/xpCwq3Kfn8">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
-  </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
-  </a>
+  <img src="https://img.shields.io/badge/Next.js-15-black?style=flat&logo=next.js" alt="Next.js 15" />
+  <img src="https://img.shields.io/badge/Medusa-2.0-9B5DE5?style=flat" alt="Medusa 2.0" />
+  <img src="https://img.shields.io/badge/TypeScript-5-blue?style=flat&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind-3-38B2AC?style=flat&logo=tailwind-css" alt="Tailwind CSS" />
 </p>
+
+## 🌴 About OFAM Agro Enterprise
+
+OFAM Agro Enterprise is a Nigerian startup dedicated to producing premium quality palm oil through sustainable farming practices and innovative processing methods. Our platform serves restaurants, distributors, chefs, and food businesses across Nigeria with authentic, high-quality palm oil.
+
+### 🎯 Our Mission
+To produce the finest quality palm oil while supporting Nigerian agricultural communities and maintaining the highest environmental standards. Every bottle represents our commitment to excellence and sustainability.
+
+## ✨ Features
+
+### 🛒 **Ecommerce Platform**
+- Product catalog with palm oil varieties
+- Shopping cart and secure checkout
+- Stripe payment integration
+- Customer accounts and order management
+- Regional shipping across Nigeria
+
+### 🎨 **Brand Experience**
+- Custom OFAM branding with olive green and orange color scheme
+- Interactive animated components with Framer Motion
+- Magnetize buttons with particle effects
+- Hand-written text animations
+- Customer testimonials carousel
+
+### 🏢 **Business Features**
+- Testimonials from Nigerian food industry leaders
+- About section highlighting sustainable practices
+- Premium quality messaging and startup positioning
+- Mobile-responsive design optimized for Nigerian market
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js 15 with App Router
+- **Backend**: Medusa.js ecommerce engine
+- **Styling**: Tailwind CSS with custom OFAM theme
+- **UI Components**: shadcn/ui + Custom components
+- **Animations**: Framer Motion
+- **Database**: PostgreSQL
+- **Payments**: Stripe
+- **Deployment**: Vercel
+- **Language**: TypeScript
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-To use the [Next.js Starter Template](https://medusajs.com/nextjs-commerce/), you should have a Medusa server running locally on port 9000.
-For a quick setup, run:
+1. **Medusa Backend** - Ensure you have a Medusa server running on port 9000
+2. **Node.js** - Version 18+ required
+3. **Database** - PostgreSQL for production
 
-```shell
-npx create-medusa-app@latest
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/sasmb/ofam-ecommerce.git
+cd ofam-ecommerce
 ```
 
-Check out [create-medusa-app docs](https://docs.medusajs.com/learn/installation) for more details and troubleshooting.
-
-# Overview
-
-The Medusa Next.js Starter is built with:
-
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Typescript](https://www.typescriptlang.org/)
-- [Medusa](https://medusajs.com/)
-
-Features include:
-
-- Full ecommerce support:
-  - Product Detail Page
-  - Product Overview Page
-  - Product Collections
-  - Cart
-  - Checkout with Stripe
-  - User Accounts
-  - Order Details
-- Full Next.js 15 support:
-  - App Router
-  - Next fetching/caching
-  - Server Components
-  - Server Actions
-  - Streaming
-  - Static Pre-Rendering
-
-# Quickstart
-
-### Setting up the environment variables
-
-Navigate into your projects directory and get your environment variables ready:
-
-```shell
-cd nextjs-starter-medusa/
-mv .env.template .env.local
+2. **Install dependencies**
+```bash
+npm install
 ```
 
-### Install dependencies
-
-Use Yarn to install all dependencies.
-
-```shell
-yarn
+3. **Environment Setup**
+```bash
+cp .env.template .env.local
 ```
 
-### Start developing
-
-You are now ready to start up your project.
-
-```shell
-yarn dev
+Configure your environment variables:
+```env
+MEDUSA_BACKEND_URL=http://localhost:9000
+NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=your_publishable_key
+NEXT_PUBLIC_BASE_URL=http://localhost:8000
+NEXT_PUBLIC_DEFAULT_REGION=us
+NEXT_PUBLIC_STRIPE_KEY=your_stripe_public_key
+REVALIDATE_SECRET=your_secret
 ```
 
-### Open the code and start customizing
-
-Your site is now running at http://localhost:8000!
-
-# Payment integrations
-
-By default this starter supports the following payment integrations
-
-- [Stripe](https://stripe.com/)
-
-To enable the integrations you need to add the following to your `.env.local` file:
-
-```shell
-NEXT_PUBLIC_STRIPE_KEY=<your-stripe-public-key>
+4. **Start development server**
+```bash
+npm run dev
 ```
 
-You'll also need to setup the integrations in your Medusa server. See the [Medusa documentation](https://docs.medusajs.com) for more information on how to configure [Stripe](https://docs.medusajs.com/resources/commerce-modules/payment/payment-provider/stripe#main).
+Your OFAM storefront will be running at `http://localhost:8000`
 
-# Resources
+## 🎨 Brand Colors
 
-## Learn more about Medusa
+```css
+--brand-olive: #677D3F     /* Primary green */
+--brand-orange: #F38D27    /* Secondary orange */
+--brand-dark: #1A1A1A      /* Dark gray */
+--brand-cream: #FFFAFA     /* Off-white */
+```
 
-- [Website](https://www.medusajs.com/)
-- [GitHub](https://github.com/medusajs)
-- [Documentation](https://docs.medusajs.com/)
+## 📦 Custom Components
 
-## Learn more about Next.js
+### Interactive Components
+- **MagnetizeButton**: Particle effect buttons with brand styling
+- **HandWrittenTitle**: SVG path animation for hero titles
+- **TestimonialsCarousel**: Auto-scrolling customer testimonials
+- **AboutSection**: Mission statement and feature highlights
 
-- [Website](https://nextjs.org/)
-- [GitHub](https://github.com/vercel/next.js)
-- [Documentation](https://nextjs.org/docs)
+### UI Components
+Built with shadcn/ui:
+- Avatar, Button, Card, Carousel
+- Custom variants for OFAM branding
+
+## 🚀 Deployment
+
+The application is deployed on Vercel with automatic deployments from the main branch.
+
+### Deploy to Vercel
+```bash
+vercel --prod
+```
+
+### Environment Variables for Production
+Ensure all environment variables are configured in your Vercel dashboard, including:
+- Medusa backend URL (production)
+- Stripe keys (production)
+- Database connection
+
+## 🇳🇬 Nigerian Market Focus
+
+- **Local Business Testimonials**: Features from Lagos, Abuja, Port Harcourt
+- **Regional Shipping**: Optimized for Nigerian geography
+- **Currency**: Nigerian Naira (NGN) support
+- **Payment Methods**: Local payment gateway integration ready
+- **Language**: English with Nigerian context
+
+## 🤝 Contributing
+
+We welcome contributions to improve the OFAM platform:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Contact
+
+**OFAM Agro Enterprise**
+- Email: info@ofamagro.ng
+- Location: Nigeria
+- Website: [Coming Soon]
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  <strong>🌴 Pioneering Premium Palm Oil Production in Nigeria 🇳🇬</strong>
+</p>
